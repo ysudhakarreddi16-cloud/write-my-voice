@@ -1,0 +1,14 @@
+export default async (req) => {
+  const apiKey = process.env.GEMINI_API_KEY;
+
+  return new Response(
+    JSON.stringify({
+      status: "ok",
+      message: "Netlify function is working",
+      keyFound: apiKey ? true : false
+    }),
+    {
+      headers: { "Content-Type": "application/json" }
+    }
+  );
+};
